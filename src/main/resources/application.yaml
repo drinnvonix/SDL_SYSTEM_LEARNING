@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: SDL_SYSTEM_LEARNING
