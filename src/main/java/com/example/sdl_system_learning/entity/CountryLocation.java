@@ -1,21 +1,22 @@
 package com.example.sdl_system_learning.entity;
 
-import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.List;
 
-@Entity
 @Data
+@Document(collection = "countries")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CountryLocation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+//    @Id
+    private String id;
 
     private String name;
     private String iso2;
 
-    @OneToMany(mappedBy = "country")
     private List<State> states;
 }

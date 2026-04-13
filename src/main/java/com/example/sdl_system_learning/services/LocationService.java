@@ -1,6 +1,6 @@
 package com.example.sdl_system_learning.services;
 
-import com.example.sdl_system_learning.entity.*;
+import com.example.sdl_system_learning.entity.CountryLocation;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class LocationService {
 
-    private List<Country> countries;
+    private List<CountryLocation> countries;
 
     @PostConstruct
     public void load() throws Exception {
@@ -24,10 +24,7 @@ public class LocationService {
         InputStream is = getClass()
                 .getResourceAsStream("/DataSet/countries+states+cities.json");
 
-        countries = mapper.readValue(
-                is,
-                new TypeReference<List<Country>>() {}
-        );
+        List<CountryLocation> data = mapper.readValue(is, new TypeReference<>() {});
     }
 
 }

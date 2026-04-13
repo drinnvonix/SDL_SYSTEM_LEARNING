@@ -15,11 +15,11 @@ public class Address {
 
     private String addressLine2;
 
-    private String city;
+    private City city;
 
-    private String state;
+    private State state;
 
-    private String country;
+    private CountryLocation country;
 
     private String zipCode;
 

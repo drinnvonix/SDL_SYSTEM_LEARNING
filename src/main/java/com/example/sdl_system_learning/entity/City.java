@@ -1,18 +1,13 @@
 package com.example.sdl_system_learning.entity;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
-@Entity
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class City {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
     private String name;
 
-    @ManyToOne
-    private State state;
 }
