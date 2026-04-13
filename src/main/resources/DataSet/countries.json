@@ -1,0 +1,1994 @@
+[
+  {
+    "country": "Aruba",
+    "isoCode": "AW",
+    "dialCode": "",
+    "flag": "🇦🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Afghanistan",
+    "isoCode": "AF",
+    "dialCode": "",
+    "flag": "🇦🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Angola",
+    "isoCode": "AO",
+    "dialCode": "",
+    "flag": "🇦🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Anguilla",
+    "isoCode": "AI",
+    "dialCode": "",
+    "flag": "🇦🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Åland Islands",
+    "isoCode": "AX",
+    "dialCode": "",
+    "flag": "🇦🇽",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Albania",
+    "isoCode": "AL",
+    "dialCode": "",
+    "flag": "🇦🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Andorra",
+    "isoCode": "AD",
+    "dialCode": "",
+    "flag": "🇦🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "United Arab Emirates",
+    "isoCode": "AE",
+    "dialCode": "",
+    "flag": "🇦🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Argentina",
+    "isoCode": "AR",
+    "dialCode": "",
+    "flag": "🇦🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Armenia",
+    "isoCode": "AM",
+    "dialCode": "",
+    "flag": "🇦🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "American Samoa",
+    "isoCode": "AS",
+    "dialCode": "",
+    "flag": "🇦🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Antarctica",
+    "isoCode": "AQ",
+    "dialCode": "",
+    "flag": "🇦🇶",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "French Southern Territories",
+    "isoCode": "TF",
+    "dialCode": "",
+    "flag": "🇹🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "isoCode": "AG",
+    "dialCode": "",
+    "flag": "🇦🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Australia",
+    "isoCode": "AU",
+    "dialCode": "",
+    "flag": "🇦🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Austria",
+    "isoCode": "AT",
+    "dialCode": "",
+    "flag": "🇦🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Azerbaijan",
+    "isoCode": "AZ",
+    "dialCode": "",
+    "flag": "🇦🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Burundi",
+    "isoCode": "BI",
+    "dialCode": "",
+    "flag": "🇧🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Belgium",
+    "isoCode": "BE",
+    "dialCode": "",
+    "flag": "🇧🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Benin",
+    "isoCode": "BJ",
+    "dialCode": "",
+    "flag": "🇧🇯",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bonaire, Sint Eustatius and Saba",
+    "isoCode": "BQ",
+    "dialCode": "",
+    "flag": "🇧🇶",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Burkina Faso",
+    "isoCode": "BF",
+    "dialCode": "",
+    "flag": "🇧🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bangladesh",
+    "isoCode": "BD",
+    "dialCode": "",
+    "flag": "🇧🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bulgaria",
+    "isoCode": "BG",
+    "dialCode": "",
+    "flag": "🇧🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bahrain",
+    "isoCode": "BH",
+    "dialCode": "",
+    "flag": "🇧🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bahamas",
+    "isoCode": "BS",
+    "dialCode": "",
+    "flag": "🇧🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "isoCode": "BA",
+    "dialCode": "",
+    "flag": "🇧🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Barthélemy",
+    "isoCode": "BL",
+    "dialCode": "",
+    "flag": "🇧🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Belarus",
+    "isoCode": "BY",
+    "dialCode": "",
+    "flag": "🇧🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Belize",
+    "isoCode": "BZ",
+    "dialCode": "",
+    "flag": "🇧🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bermuda",
+    "isoCode": "BM",
+    "dialCode": "",
+    "flag": "🇧🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bolivia, Plurinational State of",
+    "isoCode": "BO",
+    "dialCode": "",
+    "flag": "🇧🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Brazil",
+    "isoCode": "BR",
+    "dialCode": "",
+    "flag": "🇧🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Barbados",
+    "isoCode": "BB",
+    "dialCode": "",
+    "flag": "🇧🇧",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Brunei Darussalam",
+    "isoCode": "BN",
+    "dialCode": "",
+    "flag": "🇧🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bhutan",
+    "isoCode": "BT",
+    "dialCode": "",
+    "flag": "🇧🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Bouvet Island",
+    "isoCode": "BV",
+    "dialCode": "",
+    "flag": "🇧🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Botswana",
+    "isoCode": "BW",
+    "dialCode": "",
+    "flag": "🇧🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Central African Republic",
+    "isoCode": "CF",
+    "dialCode": "",
+    "flag": "🇨🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Canada",
+    "isoCode": "CA",
+    "dialCode": "",
+    "flag": "🇨🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cocos (Keeling) Islands",
+    "isoCode": "CC",
+    "dialCode": "",
+    "flag": "🇨🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Switzerland",
+    "isoCode": "CH",
+    "dialCode": "",
+    "flag": "🇨🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Chile",
+    "isoCode": "CL",
+    "dialCode": "",
+    "flag": "🇨🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "China",
+    "isoCode": "CN",
+    "dialCode": "",
+    "flag": "🇨🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "isoCode": "CI",
+    "dialCode": "",
+    "flag": "🇨🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cameroon",
+    "isoCode": "CM",
+    "dialCode": "",
+    "flag": "🇨🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Congo, The Democratic Republic of the",
+    "isoCode": "CD",
+    "dialCode": "",
+    "flag": "🇨🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Congo",
+    "isoCode": "CG",
+    "dialCode": "",
+    "flag": "🇨🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cook Islands",
+    "isoCode": "CK",
+    "dialCode": "",
+    "flag": "🇨🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Colombia",
+    "isoCode": "CO",
+    "dialCode": "",
+    "flag": "🇨🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Comoros",
+    "isoCode": "KM",
+    "dialCode": "",
+    "flag": "🇰🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cabo Verde",
+    "isoCode": "CV",
+    "dialCode": "",
+    "flag": "🇨🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Costa Rica",
+    "isoCode": "CR",
+    "dialCode": "",
+    "flag": "🇨🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cuba",
+    "isoCode": "CU",
+    "dialCode": "",
+    "flag": "🇨🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Curaçao",
+    "isoCode": "CW",
+    "dialCode": "",
+    "flag": "🇨🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Christmas Island",
+    "isoCode": "CX",
+    "dialCode": "",
+    "flag": "🇨🇽",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cayman Islands",
+    "isoCode": "KY",
+    "dialCode": "",
+    "flag": "🇰🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cyprus",
+    "isoCode": "CY",
+    "dialCode": "",
+    "flag": "🇨🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Czechia",
+    "isoCode": "CZ",
+    "dialCode": "",
+    "flag": "🇨🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Germany",
+    "isoCode": "DE",
+    "dialCode": "",
+    "flag": "🇩🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Djibouti",
+    "isoCode": "DJ",
+    "dialCode": "",
+    "flag": "🇩🇯",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Dominica",
+    "isoCode": "DM",
+    "dialCode": "",
+    "flag": "🇩🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Denmark",
+    "isoCode": "DK",
+    "dialCode": "",
+    "flag": "🇩🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Dominican Republic",
+    "isoCode": "DO",
+    "dialCode": "",
+    "flag": "🇩🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Algeria",
+    "isoCode": "DZ",
+    "dialCode": "",
+    "flag": "🇩🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Ecuador",
+    "isoCode": "EC",
+    "dialCode": "",
+    "flag": "🇪🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Egypt",
+    "isoCode": "EG",
+    "dialCode": "",
+    "flag": "🇪🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Eritrea",
+    "isoCode": "ER",
+    "dialCode": "",
+    "flag": "🇪🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Western Sahara",
+    "isoCode": "EH",
+    "dialCode": "",
+    "flag": "🇪🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Spain",
+    "isoCode": "ES",
+    "dialCode": "",
+    "flag": "🇪🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Estonia",
+    "isoCode": "EE",
+    "dialCode": "",
+    "flag": "🇪🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Ethiopia",
+    "isoCode": "ET",
+    "dialCode": "",
+    "flag": "🇪🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Finland",
+    "isoCode": "FI",
+    "dialCode": "",
+    "flag": "🇫🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Fiji",
+    "isoCode": "FJ",
+    "dialCode": "",
+    "flag": "🇫🇯",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Falkland Islands (Malvinas)",
+    "isoCode": "FK",
+    "dialCode": "",
+    "flag": "🇫🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "France",
+    "isoCode": "FR",
+    "dialCode": "",
+    "flag": "🇫🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Faroe Islands",
+    "isoCode": "FO",
+    "dialCode": "",
+    "flag": "🇫🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Micronesia, Federated States of",
+    "isoCode": "FM",
+    "dialCode": "",
+    "flag": "🇫🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Gabon",
+    "isoCode": "GA",
+    "dialCode": "",
+    "flag": "🇬🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "United Kingdom",
+    "isoCode": "GB",
+    "dialCode": "",
+    "flag": "🇬🇧",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Georgia",
+    "isoCode": "GE",
+    "dialCode": "",
+    "flag": "🇬🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guernsey",
+    "isoCode": "GG",
+    "dialCode": "",
+    "flag": "🇬🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Ghana",
+    "isoCode": "GH",
+    "dialCode": "",
+    "flag": "🇬🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Gibraltar",
+    "isoCode": "GI",
+    "dialCode": "",
+    "flag": "🇬🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guinea",
+    "isoCode": "GN",
+    "dialCode": "",
+    "flag": "🇬🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guadeloupe",
+    "isoCode": "GP",
+    "dialCode": "",
+    "flag": "🇬🇵",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Gambia",
+    "isoCode": "GM",
+    "dialCode": "",
+    "flag": "🇬🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guinea-Bissau",
+    "isoCode": "GW",
+    "dialCode": "",
+    "flag": "🇬🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Equatorial Guinea",
+    "isoCode": "GQ",
+    "dialCode": "",
+    "flag": "🇬🇶",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Greece",
+    "isoCode": "GR",
+    "dialCode": "",
+    "flag": "🇬🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Grenada",
+    "isoCode": "GD",
+    "dialCode": "",
+    "flag": "🇬🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Greenland",
+    "isoCode": "GL",
+    "dialCode": "",
+    "flag": "🇬🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guatemala",
+    "isoCode": "GT",
+    "dialCode": "",
+    "flag": "🇬🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "French Guiana",
+    "isoCode": "GF",
+    "dialCode": "",
+    "flag": "🇬🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guam",
+    "isoCode": "GU",
+    "dialCode": "",
+    "flag": "🇬🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Guyana",
+    "isoCode": "GY",
+    "dialCode": "",
+    "flag": "🇬🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Hong Kong",
+    "isoCode": "HK",
+    "dialCode": "",
+    "flag": "🇭🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Heard Island and McDonald Islands",
+    "isoCode": "HM",
+    "dialCode": "",
+    "flag": "🇭🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Honduras",
+    "isoCode": "HN",
+    "dialCode": "",
+    "flag": "🇭🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Croatia",
+    "isoCode": "HR",
+    "dialCode": "",
+    "flag": "🇭🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Haiti",
+    "isoCode": "HT",
+    "dialCode": "",
+    "flag": "🇭🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Hungary",
+    "isoCode": "HU",
+    "dialCode": "",
+    "flag": "🇭🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Indonesia",
+    "isoCode": "ID",
+    "dialCode": "",
+    "flag": "🇮🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Isle of Man",
+    "isoCode": "IM",
+    "dialCode": "",
+    "flag": "🇮🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "India",
+    "isoCode": "IN",
+    "dialCode": "",
+    "flag": "🇮🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "British Indian Ocean Territory",
+    "isoCode": "IO",
+    "dialCode": "",
+    "flag": "🇮🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Ireland",
+    "isoCode": "IE",
+    "dialCode": "",
+    "flag": "🇮🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Iran, Islamic Republic of",
+    "isoCode": "IR",
+    "dialCode": "",
+    "flag": "🇮🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Iraq",
+    "isoCode": "IQ",
+    "dialCode": "",
+    "flag": "🇮🇶",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Iceland",
+    "isoCode": "IS",
+    "dialCode": "",
+    "flag": "🇮🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Israel",
+    "isoCode": "IL",
+    "dialCode": "",
+    "flag": "🇮🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Italy",
+    "isoCode": "IT",
+    "dialCode": "",
+    "flag": "🇮🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Jamaica",
+    "isoCode": "JM",
+    "dialCode": "",
+    "flag": "🇯🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Jersey",
+    "isoCode": "JE",
+    "dialCode": "",
+    "flag": "🇯🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Jordan",
+    "isoCode": "JO",
+    "dialCode": "",
+    "flag": "🇯🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Japan",
+    "isoCode": "JP",
+    "dialCode": "",
+    "flag": "🇯🇵",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Kazakhstan",
+    "isoCode": "KZ",
+    "dialCode": "",
+    "flag": "🇰🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Kenya",
+    "isoCode": "KE",
+    "dialCode": "",
+    "flag": "🇰🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Kyrgyzstan",
+    "isoCode": "KG",
+    "dialCode": "",
+    "flag": "🇰🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Cambodia",
+    "isoCode": "KH",
+    "dialCode": "",
+    "flag": "🇰🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Kiribati",
+    "isoCode": "KI",
+    "dialCode": "",
+    "flag": "🇰🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "isoCode": "KN",
+    "dialCode": "",
+    "flag": "🇰🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Korea, Republic of",
+    "isoCode": "KR",
+    "dialCode": "",
+    "flag": "🇰🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Kuwait",
+    "isoCode": "KW",
+    "dialCode": "",
+    "flag": "🇰🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Lao People's Democratic Republic",
+    "isoCode": "LA",
+    "dialCode": "",
+    "flag": "🇱🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Lebanon",
+    "isoCode": "LB",
+    "dialCode": "",
+    "flag": "🇱🇧",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Liberia",
+    "isoCode": "LR",
+    "dialCode": "",
+    "flag": "🇱🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Libya",
+    "isoCode": "LY",
+    "dialCode": "",
+    "flag": "🇱🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Lucia",
+    "isoCode": "LC",
+    "dialCode": "",
+    "flag": "🇱🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Liechtenstein",
+    "isoCode": "LI",
+    "dialCode": "",
+    "flag": "🇱🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sri Lanka",
+    "isoCode": "LK",
+    "dialCode": "",
+    "flag": "🇱🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Lesotho",
+    "isoCode": "LS",
+    "dialCode": "",
+    "flag": "🇱🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Lithuania",
+    "isoCode": "LT",
+    "dialCode": "",
+    "flag": "🇱🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Luxembourg",
+    "isoCode": "LU",
+    "dialCode": "",
+    "flag": "🇱🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Latvia",
+    "isoCode": "LV",
+    "dialCode": "",
+    "flag": "🇱🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Macao",
+    "isoCode": "MO",
+    "dialCode": "",
+    "flag": "🇲🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Martin (French part)",
+    "isoCode": "MF",
+    "dialCode": "",
+    "flag": "🇲🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Morocco",
+    "isoCode": "MA",
+    "dialCode": "",
+    "flag": "🇲🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Monaco",
+    "isoCode": "MC",
+    "dialCode": "",
+    "flag": "🇲🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Moldova, Republic of",
+    "isoCode": "MD",
+    "dialCode": "",
+    "flag": "🇲🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Madagascar",
+    "isoCode": "MG",
+    "dialCode": "",
+    "flag": "🇲🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Maldives",
+    "isoCode": "MV",
+    "dialCode": "",
+    "flag": "🇲🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mexico",
+    "isoCode": "MX",
+    "dialCode": "",
+    "flag": "🇲🇽",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Marshall Islands",
+    "isoCode": "MH",
+    "dialCode": "",
+    "flag": "🇲🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "North Macedonia",
+    "isoCode": "MK",
+    "dialCode": "",
+    "flag": "🇲🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mali",
+    "isoCode": "ML",
+    "dialCode": "",
+    "flag": "🇲🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Malta",
+    "isoCode": "MT",
+    "dialCode": "",
+    "flag": "🇲🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Myanmar",
+    "isoCode": "MM",
+    "dialCode": "",
+    "flag": "🇲🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Montenegro",
+    "isoCode": "ME",
+    "dialCode": "",
+    "flag": "🇲🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mongolia",
+    "isoCode": "MN",
+    "dialCode": "",
+    "flag": "🇲🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Northern Mariana Islands",
+    "isoCode": "MP",
+    "dialCode": "",
+    "flag": "🇲🇵",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mozambique",
+    "isoCode": "MZ",
+    "dialCode": "",
+    "flag": "🇲🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mauritania",
+    "isoCode": "MR",
+    "dialCode": "",
+    "flag": "🇲🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Montserrat",
+    "isoCode": "MS",
+    "dialCode": "",
+    "flag": "🇲🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Martinique",
+    "isoCode": "MQ",
+    "dialCode": "",
+    "flag": "🇲🇶",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mauritius",
+    "isoCode": "MU",
+    "dialCode": "",
+    "flag": "🇲🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Malawi",
+    "isoCode": "MW",
+    "dialCode": "",
+    "flag": "🇲🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Malaysia",
+    "isoCode": "MY",
+    "dialCode": "",
+    "flag": "🇲🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Mayotte",
+    "isoCode": "YT",
+    "dialCode": "",
+    "flag": "🇾🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Namibia",
+    "isoCode": "NA",
+    "dialCode": "",
+    "flag": "🇳🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "New Caledonia",
+    "isoCode": "NC",
+    "dialCode": "",
+    "flag": "🇳🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Niger",
+    "isoCode": "NE",
+    "dialCode": "",
+    "flag": "🇳🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Norfolk Island",
+    "isoCode": "NF",
+    "dialCode": "",
+    "flag": "🇳🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Nigeria",
+    "isoCode": "NG",
+    "dialCode": "",
+    "flag": "🇳🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Nicaragua",
+    "isoCode": "NI",
+    "dialCode": "",
+    "flag": "🇳🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Niue",
+    "isoCode": "NU",
+    "dialCode": "",
+    "flag": "🇳🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Netherlands",
+    "isoCode": "NL",
+    "dialCode": "",
+    "flag": "🇳🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Norway",
+    "isoCode": "NO",
+    "dialCode": "",
+    "flag": "🇳🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Nepal",
+    "isoCode": "NP",
+    "dialCode": "",
+    "flag": "🇳🇵",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Nauru",
+    "isoCode": "NR",
+    "dialCode": "",
+    "flag": "🇳🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "New Zealand",
+    "isoCode": "NZ",
+    "dialCode": "",
+    "flag": "🇳🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Oman",
+    "isoCode": "OM",
+    "dialCode": "",
+    "flag": "🇴🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Pakistan",
+    "isoCode": "PK",
+    "dialCode": "",
+    "flag": "🇵🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Panama",
+    "isoCode": "PA",
+    "dialCode": "",
+    "flag": "🇵🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Pitcairn",
+    "isoCode": "PN",
+    "dialCode": "",
+    "flag": "🇵🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Peru",
+    "isoCode": "PE",
+    "dialCode": "",
+    "flag": "🇵🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Philippines",
+    "isoCode": "PH",
+    "dialCode": "",
+    "flag": "🇵🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Palau",
+    "isoCode": "PW",
+    "dialCode": "",
+    "flag": "🇵🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Papua New Guinea",
+    "isoCode": "PG",
+    "dialCode": "",
+    "flag": "🇵🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Poland",
+    "isoCode": "PL",
+    "dialCode": "",
+    "flag": "🇵🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Puerto Rico",
+    "isoCode": "PR",
+    "dialCode": "",
+    "flag": "🇵🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Korea, Democratic People's Republic of",
+    "isoCode": "KP",
+    "dialCode": "",
+    "flag": "🇰🇵",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Portugal",
+    "isoCode": "PT",
+    "dialCode": "",
+    "flag": "🇵🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Paraguay",
+    "isoCode": "PY",
+    "dialCode": "",
+    "flag": "🇵🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Palestine, State of",
+    "isoCode": "PS",
+    "dialCode": "",
+    "flag": "🇵🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "French Polynesia",
+    "isoCode": "PF",
+    "dialCode": "",
+    "flag": "🇵🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Qatar",
+    "isoCode": "QA",
+    "dialCode": "",
+    "flag": "🇶🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Réunion",
+    "isoCode": "RE",
+    "dialCode": "",
+    "flag": "🇷🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Romania",
+    "isoCode": "RO",
+    "dialCode": "",
+    "flag": "🇷🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Russian Federation",
+    "isoCode": "RU",
+    "dialCode": "",
+    "flag": "🇷🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Rwanda",
+    "isoCode": "RW",
+    "dialCode": "",
+    "flag": "🇷🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saudi Arabia",
+    "isoCode": "SA",
+    "dialCode": "",
+    "flag": "🇸🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sudan",
+    "isoCode": "SD",
+    "dialCode": "",
+    "flag": "🇸🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Senegal",
+    "isoCode": "SN",
+    "dialCode": "",
+    "flag": "🇸🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Singapore",
+    "isoCode": "SG",
+    "dialCode": "",
+    "flag": "🇸🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "South Georgia and the South Sandwich Islands",
+    "isoCode": "GS",
+    "dialCode": "",
+    "flag": "🇬🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Helena, Ascension and Tristan da Cunha",
+    "isoCode": "SH",
+    "dialCode": "",
+    "flag": "🇸🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Svalbard and Jan Mayen",
+    "isoCode": "SJ",
+    "dialCode": "",
+    "flag": "🇸🇯",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Solomon Islands",
+    "isoCode": "SB",
+    "dialCode": "",
+    "flag": "🇸🇧",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sierra Leone",
+    "isoCode": "SL",
+    "dialCode": "",
+    "flag": "🇸🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "El Salvador",
+    "isoCode": "SV",
+    "dialCode": "",
+    "flag": "🇸🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "San Marino",
+    "isoCode": "SM",
+    "dialCode": "",
+    "flag": "🇸🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Somalia",
+    "isoCode": "SO",
+    "dialCode": "",
+    "flag": "🇸🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Pierre and Miquelon",
+    "isoCode": "PM",
+    "dialCode": "",
+    "flag": "🇵🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Serbia",
+    "isoCode": "RS",
+    "dialCode": "",
+    "flag": "🇷🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "South Sudan",
+    "isoCode": "SS",
+    "dialCode": "",
+    "flag": "🇸🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "isoCode": "ST",
+    "dialCode": "",
+    "flag": "🇸🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Suriname",
+    "isoCode": "SR",
+    "dialCode": "",
+    "flag": "🇸🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Slovakia",
+    "isoCode": "SK",
+    "dialCode": "",
+    "flag": "🇸🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Slovenia",
+    "isoCode": "SI",
+    "dialCode": "",
+    "flag": "🇸🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sweden",
+    "isoCode": "SE",
+    "dialCode": "",
+    "flag": "🇸🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Eswatini",
+    "isoCode": "SZ",
+    "dialCode": "",
+    "flag": "🇸🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Sint Maarten (Dutch part)",
+    "isoCode": "SX",
+    "dialCode": "",
+    "flag": "🇸🇽",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Seychelles",
+    "isoCode": "SC",
+    "dialCode": "",
+    "flag": "🇸🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Syrian Arab Republic",
+    "isoCode": "SY",
+    "dialCode": "",
+    "flag": "🇸🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Turks and Caicos Islands",
+    "isoCode": "TC",
+    "dialCode": "",
+    "flag": "🇹🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Chad",
+    "isoCode": "TD",
+    "dialCode": "",
+    "flag": "🇹🇩",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Togo",
+    "isoCode": "TG",
+    "dialCode": "",
+    "flag": "🇹🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Thailand",
+    "isoCode": "TH",
+    "dialCode": "",
+    "flag": "🇹🇭",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tajikistan",
+    "isoCode": "TJ",
+    "dialCode": "",
+    "flag": "🇹🇯",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tokelau",
+    "isoCode": "TK",
+    "dialCode": "",
+    "flag": "🇹🇰",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Turkmenistan",
+    "isoCode": "TM",
+    "dialCode": "",
+    "flag": "🇹🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Timor-Leste",
+    "isoCode": "TL",
+    "dialCode": "",
+    "flag": "🇹🇱",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tonga",
+    "isoCode": "TO",
+    "dialCode": "",
+    "flag": "🇹🇴",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "isoCode": "TT",
+    "dialCode": "",
+    "flag": "🇹🇹",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tunisia",
+    "isoCode": "TN",
+    "dialCode": "",
+    "flag": "🇹🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Türkiye",
+    "isoCode": "TR",
+    "dialCode": "",
+    "flag": "🇹🇷",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tuvalu",
+    "isoCode": "TV",
+    "dialCode": "",
+    "flag": "🇹🇻",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Taiwan, Province of China",
+    "isoCode": "TW",
+    "dialCode": "",
+    "flag": "🇹🇼",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Tanzania, United Republic of",
+    "isoCode": "TZ",
+    "dialCode": "",
+    "flag": "🇹🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Uganda",
+    "isoCode": "UG",
+    "dialCode": "",
+    "flag": "🇺🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Ukraine",
+    "isoCode": "UA",
+    "dialCode": "",
+    "flag": "🇺🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "United States Minor Outlying Islands",
+    "isoCode": "UM",
+    "dialCode": "",
+    "flag": "🇺🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Uruguay",
+    "isoCode": "UY",
+    "dialCode": "",
+    "flag": "🇺🇾",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "United States",
+    "isoCode": "US",
+    "dialCode": "",
+    "flag": "🇺🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Uzbekistan",
+    "isoCode": "UZ",
+    "dialCode": "",
+    "flag": "🇺🇿",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Holy See (Vatican City State)",
+    "isoCode": "VA",
+    "dialCode": "",
+    "flag": "🇻🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "isoCode": "VC",
+    "dialCode": "",
+    "flag": "🇻🇨",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Venezuela, Bolivarian Republic of",
+    "isoCode": "VE",
+    "dialCode": "",
+    "flag": "🇻🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Virgin Islands, British",
+    "isoCode": "VG",
+    "dialCode": "",
+    "flag": "🇻🇬",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Virgin Islands, U.S.",
+    "isoCode": "VI",
+    "dialCode": "",
+    "flag": "🇻🇮",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Viet Nam",
+    "isoCode": "VN",
+    "dialCode": "",
+    "flag": "🇻🇳",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Vanuatu",
+    "isoCode": "VU",
+    "dialCode": "",
+    "flag": "🇻🇺",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Wallis and Futuna",
+    "isoCode": "WF",
+    "dialCode": "",
+    "flag": "🇼🇫",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Samoa",
+    "isoCode": "WS",
+    "dialCode": "",
+    "flag": "🇼🇸",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Yemen",
+    "isoCode": "YE",
+    "dialCode": "",
+    "flag": "🇾🇪",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "South Africa",
+    "isoCode": "ZA",
+    "dialCode": "",
+    "flag": "🇿🇦",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Zambia",
+    "isoCode": "ZM",
+    "dialCode": "",
+    "flag": "🇿🇲",
+    "minLength": 6,
+    "maxLength": 15
+  },
+  {
+    "country": "Zimbabwe",
+    "isoCode": "ZW",
+    "dialCode": "",
+    "flag": "🇿🇼",
+    "minLength": 6,
+    "maxLength": 15
+  }
+]
