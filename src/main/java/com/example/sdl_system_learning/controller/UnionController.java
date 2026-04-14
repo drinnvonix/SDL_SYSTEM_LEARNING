@@ -78,7 +78,7 @@ public class UnionController {
     }
 
 
-    @GetMapping("/unions/{id}")
+    @GetMapping("/union/{id}")
     public ApiResponse<?> getUnionById(@PathVariable String id) {
 
         return ApiResponse.builder()
