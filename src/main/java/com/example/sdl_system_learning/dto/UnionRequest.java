@@ -29,7 +29,10 @@ public class UnionRequest {
     )
     private String headquarterCity;
 
-    @Email(message = "Enter a valid email(e.g., user@example.com).")
+    @Pattern(
+            regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",
+            message = "Enter a valid email (e.g., user@example.com)."
+    )
     @Size(max = 250)
     private String email;
 

@@ -41,13 +41,11 @@ public class UnionController {
     @PutMapping(value = "/union/{id}", consumes = "multipart/form-data" )
     public ApiResponse<UnionResponse> updateUnion(
             @PathVariable String id,
-            @RequestPart("data") String data,
+            @Valid @RequestPart("data") UnionRequest data,
             @RequestPart(value = "logo", required = false) MultipartFile file
     ) throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        UnionRequest request = mapper.readValue(data, UnionRequest.class);
 
-        UnionResponse response = unionService.updateUnion(id,request, file);
+        UnionResponse response = unionService.updateUnion(id,data, file);
 
         return ResponseUtil.success("Union Updated successfully", response);
 

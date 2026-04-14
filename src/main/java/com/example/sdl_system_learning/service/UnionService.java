@@ -7,6 +7,7 @@ import com.example.sdl_system_learning.entity.Phone.Phone;
 import com.example.sdl_system_learning.entity.Union;
 import com.example.sdl_system_learning.repository.CountryLocationRepository;
 import com.example.sdl_system_learning.repository.UnionRepository;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
