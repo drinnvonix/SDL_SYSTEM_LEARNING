@@ -8,13 +8,20 @@ import lombok.Data;
 public class UnionResponse {
 
     private String id;
+
     private String unionName;
+
     private String shortName;
+
     private String email;
+
     private String websiteUrl;
+
     private String establishDate;
+
     private String logo;
 
     private PhoneResponse phone;
+
     private AddressResponse address;
 }

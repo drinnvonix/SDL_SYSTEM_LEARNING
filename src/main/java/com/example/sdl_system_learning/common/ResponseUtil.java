@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class ResponseUtil {
 
-    public static <T> ApiResponse<T> success(String message, T data) {
+    public static <T> ApiResponse<T> success(String message, T data){
 
         return ApiResponse.<T>builder()
                 .statusCode(200)
@@ -15,7 +15,7 @@ public class ResponseUtil {
                 .build();
     }
 
-    public static ApiResponse<?> success(String message) {
+    public static ApiResponse<?> success(String message){
         return success(message, null);
     }
 
@@ -23,7 +23,7 @@ public class ResponseUtil {
             int statusCode,
             String message,
             String messageKey
-    ) {
+    ){
         return ApiResponse.builder()
                 .statusCode(statusCode)
                 .messageKey(messageKey)
@@ -35,7 +35,7 @@ public class ResponseUtil {
 
     public static ApiResponse<?> validationError(
             Map<String, String> errors
-    ) {
+    ){
         return ApiResponse.builder()
                 .statusCode(400)
                 .messageKey("VALIDATION_ERROR")

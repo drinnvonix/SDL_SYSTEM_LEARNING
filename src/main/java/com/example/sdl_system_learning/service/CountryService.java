@@ -15,7 +15,7 @@ public class CountryService {
     private List<Country> countries;
 
     @PostConstruct
-    public void load() throws Exception {
+    public void load() throws Exception{
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -28,11 +28,13 @@ public class CountryService {
         );
     }
 
-    public List<Country> getAll() {
+    public List<Country> getAll(){
+
         return countries;
     }
 
     public Country getByIso(String isoCode) {
+
         return countries.stream()
                 .filter(c -> c.getIsoCode().equalsIgnoreCase(isoCode))
                 .findFirst()

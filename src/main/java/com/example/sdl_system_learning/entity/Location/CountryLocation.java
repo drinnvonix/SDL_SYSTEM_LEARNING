@@ -18,6 +18,7 @@ public class CountryLocation {
     private String id;
 
     private String name;
+
     private String iso2;
 
     private List<State> states;

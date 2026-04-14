@@ -26,14 +26,14 @@ public class UnionService {
 
     public UnionService(UnionRepository unionRepository,
                         PhoneValidationService phoneValidationService,
-                        CountryLocationRepository countryRepository) {
+                        CountryLocationRepository countryRepository){
 
         this.unionRepository = unionRepository;
         this.phoneValidationService = phoneValidationService;
         this.countryRepository = countryRepository;
     }
 
-    private Phone mapToPhone(PhoneRequest request) {
+    private Phone mapToPhone(PhoneRequest request){
 
         if (request == null) return null;
 
@@ -43,7 +43,7 @@ public class UnionService {
                 .build();
     }
 
-    private Address mapToAddress(AddressRequest request) {
+    private Address mapToAddress(AddressRequest request){
 
         if (request == null) return null;
 
@@ -64,7 +64,8 @@ public class UnionService {
         return address;
     }
 
-    private PhoneResponse mapToPhoneResponse(Phone phone) {
+    private PhoneResponse mapToPhoneResponse(Phone phone){
+
         if (phone == null) return null;
 
         return PhoneResponse.builder()
@@ -73,7 +74,8 @@ public class UnionService {
                 .build();
     }
 
-    private AddressResponse mapToAddressResponse(Address address) {
+    private AddressResponse mapToAddressResponse(Address address){
+
         if (address == null) return null;
 
         return AddressResponse.builder()
@@ -87,7 +89,7 @@ public class UnionService {
     }
 
 
-    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException {
+    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException{
 
         if (request.getPhone() != null) {
             phoneValidationService.validatePhone(request.getPhone());
@@ -174,7 +176,7 @@ public class UnionService {
                 .build();
     }
 
-    public Page<UnionResponse> getAllUnions(Pageable pageable) {
+    public Page<UnionResponse> getAllUnions(Pageable pageable){
 
         Page<Union> unionPage = unionRepository.findAll(pageable);
 

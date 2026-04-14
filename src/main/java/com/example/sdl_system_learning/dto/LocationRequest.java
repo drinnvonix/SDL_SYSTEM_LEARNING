@@ -6,7 +6,9 @@ import lombok.Data;
 public class LocationRequest {
 
     private String countryIso;
+
     private String stateIso;
+
     private String city;
 
 }

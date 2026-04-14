@@ -15,19 +15,19 @@ import tools.jackson.databind.ObjectMapper;
 
 @RestController
 @RequestMapping("/api")
-public class UnionController {
+public class UnionController{
 
     private final UnionService unionService;
 
-    public UnionController(UnionService unionService) {
+    public UnionController(UnionService unionService){
+
         this.unionService = unionService;
     }
 
     @PostMapping(value = "/union", consumes = "multipart/form-data")
     public ApiResponse<UnionResponse> createUnion(
             @RequestPart("data") String data,
-            @RequestPart(value = "logo", required = false) MultipartFile file
-    ) throws Exception {
+            @RequestPart(value = "logo", required = false) MultipartFile file) throws Exception{
 
         ObjectMapper mapper = new ObjectMapper();
         UnionRequest request = mapper.readValue(data, UnionRequest.class);
@@ -40,7 +40,7 @@ public class UnionController {
     public ApiResponse<?> getAllUnions(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size
-    ) {
+    ){
 
         Pageable pageable = PageRequest.of(page, size);
 
