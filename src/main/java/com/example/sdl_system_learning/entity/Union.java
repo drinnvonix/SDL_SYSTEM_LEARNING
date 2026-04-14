@@ -2,6 +2,9 @@ package com.example.sdl_system_learning.entity;
 
 import com.example.sdl_system_learning.entity.Location.Address;
 import com.example.sdl_system_learning.entity.Phone.Phone;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,17 +23,22 @@ public class Union {
 
     private String logo;
 
+    @NotNull
     private String unionName;
 
     private String shortName;
 
+    @NotNull
     private String headquarterCity;
 
+    @Email
+    @UniqueElements
     private String email;
 
     @UniqueElements
     private Phone phone;
 
+    @NotNull
     private String establishDate;
 
     @UniqueElements

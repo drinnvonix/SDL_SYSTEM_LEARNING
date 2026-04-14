@@ -10,7 +10,7 @@ public class UnionRequest {
     @Size(max = 100, message = "Union Name cannot exceed 100 characters.")
     @Pattern(
             regexp = "^[a-zA-Z0-9\\-\\s]+$",
-            message = "Union Name can only include letters, numbers, spaces, and hyphens (-)."
+            message = "Union Name can only include letters, numbers, spaces, and hyphens(-)."
     )
     private String unionName;
 
@@ -21,11 +21,11 @@ public class UnionRequest {
     )
     private String shortName;
 
-    @NotBlank(message = "City is required.")
+    @NotBlank(message = "Headquarter City is required.")
     @Size(max = 100, message = "City name cannot exceed 100 characters.")
     @Pattern(
             regexp = "^[a-zA-Z\\s\\-'.]+$",
-            message = "City name can only contain letters, spaces, hyphens, apostrophes, and periods."
+            message = "City name can only contain letters, spaces, hyphens, apostrophes, and periods(.)."
     )
     private String headquarterCity;
 

@@ -8,9 +8,14 @@ import lombok.Data;
 public class AddressResponse {
 
     private String addressLine1;
+
     private String addressLine2;
+
     private String countryIso;
+
     private String stateIso;
+
     private String city;
+
     private String zipCode;
 }

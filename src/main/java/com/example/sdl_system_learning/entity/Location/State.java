@@ -10,6 +10,7 @@ import java.util.List;
 public class State {
 
     private String name;
+
     private String iso2;
 
     private List<City> cities;

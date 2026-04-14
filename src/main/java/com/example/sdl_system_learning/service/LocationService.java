@@ -17,7 +17,7 @@ public class LocationService {
     private List<CountryLocation> countries;
 
     @PostConstruct
-    public void load() throws Exception {
+    public void load() throws Exception{
 
         ObjectMapper mapper = new ObjectMapper();
 
