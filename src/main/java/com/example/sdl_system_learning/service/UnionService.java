@@ -186,6 +186,7 @@ public class UnionService {
                 .websiteUrl(union.getWebsiteUrl())
                 .logo(union.getLogo())
                 .establishDate(union.getEstablishDate())
+                .headquarterCity(union.getHeadquarterCity())
 
                 .phone(union.getPhone() != null
                         ? PhoneResponse.builder()
@@ -207,5 +208,40 @@ public class UnionService {
 
                 .build()
         );
+    }
+
+
+    public UnionResponse getUnionById(String id) {
+
+        Union union = unionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Union not found"));
+
+        return UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .websiteUrl(union.getWebsiteUrl())
+                .logo(union.getLogo())
+                .establishDate(union.getEstablishDate())
+                .headquarterCity(union.getHeadquarterCity())
+                .phone(union.getPhone() != null
+                        ? PhoneResponse.builder()
+                        .countryCode(union.getPhone().getCountryCode())
+                        .phoneNumber(union.getPhone().getPhoneNumber())
+                        .build()
+                        : null)
+
+                .address(union.getAddress() != null
+                        ? AddressResponse.builder()
+                        .addressLine1(union.getAddress().getAddressLine1())
+                        .addressLine2(union.getAddress().getAddressLine2())
+                        .countryIso(union.getAddress().getCountryIso())
+                        .stateIso(union.getAddress().getStateIso())
+                        .city(union.getAddress().getCity())
+                        .zipCode(union.getAddress().getZipCode())
+                        .build()
+                        : null)
+                .build();
     }
 }
