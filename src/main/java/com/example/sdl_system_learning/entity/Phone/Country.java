@@ -1,5 +1,6 @@
-package com.example.sdl_system_learning.entity;
+package com.example.sdl_system_learning.entity.Phone;
 
+import com.example.sdl_system_learning.entity.Location.State;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 

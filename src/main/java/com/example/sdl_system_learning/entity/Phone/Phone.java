@@ -1,4 +1,4 @@
-package com.example.sdl_system_learning.entity;
+package com.example.sdl_system_learning.entity.Phone;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

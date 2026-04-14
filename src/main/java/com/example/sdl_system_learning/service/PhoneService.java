@@ -1,7 +1,7 @@
-package com.example.sdl_system_learning.services;
+package com.example.sdl_system_learning.service;
 
 import com.example.sdl_system_learning.dto.PhoneRequest;
-import com.example.sdl_system_learning.entity.Country;
+import com.example.sdl_system_learning.entity.Phone.Country;
 import com.example.sdl_system_learning.validator.PhoneValidator;
 import org.springframework.stereotype.Service;
 

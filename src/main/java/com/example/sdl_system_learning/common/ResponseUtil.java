@@ -1,67 +1,47 @@
 package com.example.sdl_system_learning.common;
 
-import com.example.sdl_system_learning.common.ApiResponse;
-import org.springframework.http.HttpStatus;
-
 import java.util.Map;
 
 public class ResponseUtil {
 
-    public static ApiResponse<String> success(String message){
-
-        return ApiResponse.<String>builder()
-                .statusCode(HttpStatus.OK.value())
-                .messageKey("SUCCESS")
-                .message(message)
-                .data(null)
-                .build();
-    }
-
-    public static <T> ApiResponse<T> success(String message, T data){
-
-        return success(HttpStatus.OK, message, data);
-    }
-
-    public static <T> ApiResponse<T> success(HttpStatus status, String message, T data){
+    public static <T> ApiResponse<T> success(String message, T data) {
 
         return ApiResponse.<T>builder()
-                .statusCode(status.value())
+                .statusCode(200)
                 .messageKey("SUCCESS")
                 .message(message)
                 .data(data)
+                .errors(null)
                 .build();
     }
 
-    public static <T> ApiResponse<T> error(HttpStatus status, String message, String messageKey, String pretty){
-
-        return error(status, message, messageKey, pretty, null, null);
+    public static ApiResponse<?> success(String message) {
+        return success(message, null);
     }
 
-    public static <T> ApiResponse<T> error(
-            HttpStatus status,
+    public static ApiResponse<?> error(
+            int statusCode,
             String message,
-            String messageKey,
-            String pretty,
-            T data,
-            Map<String, String> errors
-    ){
-
-        return ApiResponse.<T>builder()
-                .statusCode(status.value())
+            String messageKey
+    ) {
+        return ApiResponse.builder()
+                .statusCode(statusCode)
                 .messageKey(messageKey)
                 .message(message)
-                .data(data)
-                .errors(errors)
+                .data(null)
+                .errors(null)
                 .build();
     }
 
-    public static <T> ApiResponse<T> error(int statuscode, String message,T data){
-
-        return ApiResponse.<T>builder()
-                .statusCode(statuscode)
-                .messageKey("ERROR")
-                .message(message)
-                .data(data)
+    public static ApiResponse<?> validationError(
+            Map<String, String> errors
+    ) {
+        return ApiResponse.builder()
+                .statusCode(400)
+                .messageKey("VALIDATION_ERROR")
+                .message("Validation failed")
+                .data(null)
+                .errors(errors)
                 .build();
     }
 }

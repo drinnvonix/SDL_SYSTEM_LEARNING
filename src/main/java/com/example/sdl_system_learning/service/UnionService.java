@@ -1,0 +1,142 @@
+package com.example.sdl_system_learning.service;
+
+import com.example.sdl_system_learning.dto.AddressRequest;
+import com.example.sdl_system_learning.dto.PhoneRequest;
+import com.example.sdl_system_learning.dto.UnionRequest;
+import com.example.sdl_system_learning.entity.Location.Address;
+import com.example.sdl_system_learning.entity.Location.CountryLocation;
+import com.example.sdl_system_learning.entity.Phone.Phone;
+import com.example.sdl_system_learning.entity.Union;
+import com.example.sdl_system_learning.repository.CountryLocationRepository;
+import com.example.sdl_system_learning.repository.UnionRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDate;
+
+@Service
+public class UnionService {
+
+    private final PhoneValidationService phoneValidationService;
+    private final UnionRepository  unionRepository;
+    private final CountryLocationRepository countryRepository;
+
+
+    public UnionService(UnionRepository unionRepository,
+                        PhoneValidationService phoneValidationService,
+                        CountryLocationRepository countryRepository) {
+
+        this.unionRepository = unionRepository;
+        this.phoneValidationService = phoneValidationService;
+        this.countryRepository = countryRepository;
+    }
+
+    private Phone mapToPhone(PhoneRequest request) {
+
+        if (request == null) return null;
+
+        return Phone.builder()
+                .countryCode(request.getCountryIso())
+                .phoneNumber(request.getPhoneNumber())
+                .build();
+    }
+
+    private Address mapToAddress(AddressRequest request) {
+
+        if (request == null) return null;
+
+        Address address = new Address();
+
+        address.setAddressLine1(request.getAddressLine1());
+        address.setAddressLine2(request.getAddressLine2());
+
+        CountryLocation country = countryRepository
+                .findByIso2(request.getCountryIso())
+                .orElseThrow(() -> new RuntimeException("Invalid country"));
+
+        address.setCountryIso(request.getCountryIso());
+        address.setStateIso(request.getStateIso());
+        address.setCity(request.getCity());
+        address.setZipCode(request.getZipCode());
+
+        return address;
+    }
+
+
+    public void createUnion(UnionRequest request, MultipartFile file) throws IOException {
+
+        if (request.getPhone() != null) {
+            phoneValidationService.validatePhone(request.getPhone());
+        }
+
+        if (request.getEmail() != null &&
+                unionRepository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("Email already exists");
+        }
+
+        LocalDate date = LocalDate.parse(request.getEstablishDate());
+        if (date.isAfter(LocalDate.now())) {
+            throw new RuntimeException("Established date cannot be in the future.");
+        }
+
+        Union union = Union.builder()
+                .unionName(request.getUnionName())
+                .shortName(request.getShortName())
+                .headquarterCity(request.getHeadquarterCity())
+                .email(request.getEmail())
+                .websiteUrl(request.getWebsiteUrl())
+                .establishDate(request.getEstablishDate())
+                .phone(mapToPhone(request.getPhone()))
+                .address(mapToAddress(request.getAddress()))
+                .build();
+
+        union = unionRepository.save(union);
+
+        String logoPath = null;
+
+        if (file != null && !file.isEmpty()) {
+
+            String originalName = file.getOriginalFilename();
+
+            System.out.println(STR."FILE: \{file}");
+            System.out.println(STR."File size (bytes): \{file.getSize()}");
+            System.out.println(STR."File size (MB): \{file.getSize() / (1024.0 * 1024)}");
+
+            if (originalName == null ||
+                    !(originalName.endsWith(".jpg") ||
+                            originalName.endsWith(".jpeg") ||
+                            originalName.endsWith(".png"))) {
+
+                throw new RuntimeException("Only JPG, JPEG, and PNG formats are allowed.");
+            }
+
+            long maxSize = 25 * 1024 * 1024;
+
+            if (file.getSize() > maxSize) {
+                throw new RuntimeException("Image must be less than 25 MB.");
+            }
+
+
+            String extension = originalName.substring(originalName.lastIndexOf("."));
+
+            String fileName = "UnionLogo_" + union.getId() + extension;
+
+            String uploadDir = System.getProperty("user.dir") + "/uploads/";
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            File dest = new File(uploadDir + fileName);
+            file.transferTo(dest);
+
+            logoPath = fileName;
+        }
+
+        System.out.println("FILE: " + file);
+
+        union.setLogo(logoPath);
+
+        unionRepository.save(union);
+    }
+}

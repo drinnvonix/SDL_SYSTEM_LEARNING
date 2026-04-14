@@ -1,6 +1,6 @@
-package com.example.sdl_system_learning.services;
+package com.example.sdl_system_learning.service;
 
-import com.example.sdl_system_learning.entity.CountryLocation;
+import com.example.sdl_system_learning.entity.Location.CountryLocation;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;

@@ -1,7 +1,8 @@
-package com.example.sdl_system_learning.entity;
+package com.example.sdl_system_learning.entity.Location;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -9,10 +10,11 @@ import java.util.List;
 
 @Data
 @Document(collection = "countries")
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CountryLocation {
 
-//    @Id
     private String id;
 
     private String name;

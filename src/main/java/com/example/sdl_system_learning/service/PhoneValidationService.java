@@ -1,8 +1,9 @@
-package com.example.sdl_system_learning.validator;
+package com.example.sdl_system_learning.service;
 
 import com.example.sdl_system_learning.dto.PhoneRequest;
-import com.example.sdl_system_learning.entity.Country;
-import com.example.sdl_system_learning.services.CountryService;
+import com.example.sdl_system_learning.entity.Phone.Country;
+import com.example.sdl_system_learning.exception.InvalidPhoneException;
+import com.example.sdl_system_learning.validator.PhoneValidator;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -16,17 +17,19 @@ public class PhoneValidationService {
 
     public void validatePhone(PhoneRequest request) {
 
-        // Step 1: Check country exists
         Country country = countryService.getByIso(request.getCountryIso());
 
-        // Step 2: Validate phone
+        if (country == null) {
+            throw new RuntimeException("Invalid country ISO");
+        }
+
         boolean valid = PhoneValidator.isValid(
                 request.getCountryIso(),
                 request.getPhoneNumber()
         );
 
         if (!valid) {
-            throw new RuntimeException(
+            throw new InvalidPhoneException(
                     "Invalid phone number for country: " + country.getCountry()
             );
         }

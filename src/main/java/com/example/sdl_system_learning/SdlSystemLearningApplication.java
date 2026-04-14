@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SdlSystemLearningApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SdlSystemLearningApplication.class, args);
-    }
 
+        SpringApplication.run(SdlSystemLearningApplication.class, args);
+
+    }
 }

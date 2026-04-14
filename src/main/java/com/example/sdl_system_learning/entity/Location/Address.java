@@ -1,4 +1,4 @@
-package com.example.sdl_system_learning.entity;
+package com.example.sdl_system_learning.entity.Location;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,11 +15,11 @@ public class Address {
 
     private String addressLine2;
 
-    private City city;
+    private String countryIso;
 
-    private State state;
+    private String stateIso;
 
-    private CountryLocation country;
+    private String city;
 
     private String zipCode;
 
