@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tools.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
+
 
 @RestController
 @RequestMapping("/api")
@@ -39,25 +41,22 @@ public class UnionController {
     }
 
     @PutMapping(value = "/union/{id}", consumes = "multipart/form-data" )
-    public ApiResponse<?> updateUnion(
+    public ApiResponse<UnionResponse> updateUnion(
             @PathVariable String id,
             @RequestPart("data") String data,
             @RequestPart(value = "file", required = false) MultipartFile file
-    ){
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            UnionRequest request = mapper.readValue(data, UnionRequest.class);
+    ) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        UnionRequest request = mapper.readValue(data, UnionRequest.class);
 
-            unionService.updateUnion(id,request, file);
-            return ResponseUtil.success("Union Updated successfully", HttpStatus.OK);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseUtil.error(400,"Something went wrong, Please try agian.","error");
-        }
+        UnionResponse response = unionService.updateUnion(id,request, file);
+
+        return ResponseUtil.success("Union Updated successfully", response);
+
     }
 
     @GetMapping("/unions")
-    public ApiResponse<?> getAllUnions(
+    public ApiResponse<Page<UnionResponse>> getAllUnions(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size,
             @RequestParam(defaultValue = "id") String sortBy,
@@ -70,21 +69,17 @@ public class UnionController {
 
         Pageable pageable = PageRequest.of(page, size, sort);
 
-        return ApiResponse.builder()
-                .statusCode(200)
-                .message("Unions fetched successfully")
-                .data(unionService.getAllUnions(pageable))
-                .build();
+        Page<UnionResponse> response = unionService.getAllUnions(pageable);
+
+        return ResponseUtil.success("Union Fetched successfully", response);
     }
 
 
     @GetMapping("/union/{id}")
-    public ApiResponse<?> getUnionById(@PathVariable String id) {
+    public ApiResponse<UnionResponse> getUnionById(@PathVariable String id) {
 
-        return ApiResponse.builder()
-                .statusCode(200)
-                .message("Union fetched successfully")
-                .data(unionService.getUnionById(id))
-                .build();
+        UnionResponse response =  unionService.getUnionById(id);
+
+        return ResponseUtil.success("Union Fetched successfully", response);
     }
 }

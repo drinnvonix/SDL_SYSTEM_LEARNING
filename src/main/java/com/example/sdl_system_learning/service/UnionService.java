@@ -124,10 +124,6 @@ public class UnionService {
 
             String originalName = file.getOriginalFilename();
 
-            System.out.println(STR."FILE: \{file}");
-            System.out.println(STR."File size (bytes): \{file.getSize()}");
-            System.out.println(STR."File size (MB): \{file.getSize() / (1024.0 * 1024)}");
-
             if (originalName == null ||
                     !(originalName.endsWith(".jpg") ||
                             originalName.endsWith(".jpeg") ||
@@ -168,6 +164,7 @@ public class UnionService {
                 .unionName(union.getUnionName())
                 .shortName(union.getShortName())
                 .email(union.getEmail())
+                .headquarterCity(union.getHeadquarterCity())
                 .websiteUrl(union.getWebsiteUrl())
                 .establishDate(union.getEstablishDate())
                 .logo(union.getLogo())
@@ -176,11 +173,10 @@ public class UnionService {
                 .build();
     }
 
-    public void updateUnion(String id, UnionRequest request, MultipartFile file) {
+    public UnionResponse updateUnion(String id, UnionRequest request, MultipartFile file) throws IOException {
 
         Union union = unionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("UNION_NOT_FOUND"));
-
 
         // Phone validation
         if (request.getPhone() != null) {
@@ -193,7 +189,7 @@ public class UnionService {
             throw new RuntimeException("INVALID_ESTABLISH_DATE");
         }
 
-        // Update fields
+        // Update basic fields
         union.setUnionName(request.getUnionName());
         union.setShortName(request.getShortName());
         union.setHeadquarterCity(request.getHeadquarterCity());
@@ -203,7 +199,59 @@ public class UnionService {
         union.setPhone(mapToPhone(request.getPhone()));
         union.setAddress(mapToAddress(request.getAddress()));
 
+        // 🔥 IMAGE UPLOAD LOGIC (NEW)
+        if (file != null && !file.isEmpty()) {
+
+            String originalName = file.getOriginalFilename();
+
+            if (originalName == null ||
+                    !(originalName.endsWith(".jpg") ||
+                            originalName.endsWith(".jpeg") ||
+                            originalName.endsWith(".png"))) {
+
+                throw new RuntimeException("Only JPG, JPEG, and PNG formats are allowed.");
+            }
+
+            long maxSize = 25 * 1024 * 1024;
+            if (file.getSize() > maxSize) {
+                throw new RuntimeException("Image must be less than 25 MB.");
+            }
+
+            String extension = originalName.substring(originalName.lastIndexOf("."));
+            String fileName = "UnionLogo_" + union.getId() + extension;
+
+            String uploadDir = System.getProperty("user.dir") + "/uploads/";
+            File dir = new File(uploadDir);
+            if (!dir.exists()) dir.mkdirs();
+
+            File dest = new File(uploadDir + fileName);
+            file.transferTo(dest);
+
+            // Optional: delete old image
+            if (union.getLogo() != null) {
+                File oldFile = new File(uploadDir + union.getLogo());
+                if (oldFile.exists()) {
+                    oldFile.delete();
+                }
+            }
+
+            union.setLogo(fileName);
+        }
+
         unionRepository.save(union);
+
+        return UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .headquarterCity(union.getHeadquarterCity())
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
+                .build();
     }
     public Page<UnionResponse> getAllUnions(Pageable pageable){
 
@@ -214,29 +262,12 @@ public class UnionService {
                 .unionName(union.getUnionName())
                 .shortName(union.getShortName())
                 .email(union.getEmail())
-                .websiteUrl(union.getWebsiteUrl())
-                .logo(union.getLogo())
-                .establishDate(union.getEstablishDate())
                 .headquarterCity(union.getHeadquarterCity())
-
-                .phone(union.getPhone() != null
-                        ? PhoneResponse.builder()
-                        .countryCode(union.getPhone().getCountryCode())
-                        .phoneNumber(union.getPhone().getPhoneNumber())
-                        .build()
-                        : null)
-
-                .address(union.getAddress() != null
-                        ? AddressResponse.builder()
-                        .addressLine1(union.getAddress().getAddressLine1())
-                        .addressLine2(union.getAddress().getAddressLine2())
-                        .countryIso(union.getAddress().getCountryIso())
-                        .stateIso(union.getAddress().getStateIso())
-                        .city(union.getAddress().getCity())
-                        .zipCode(union.getAddress().getZipCode())
-                        .build()
-                        : null)
-
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
                 .build()
         );
     }
@@ -252,27 +283,12 @@ public class UnionService {
                 .unionName(union.getUnionName())
                 .shortName(union.getShortName())
                 .email(union.getEmail())
-                .websiteUrl(union.getWebsiteUrl())
-                .logo(union.getLogo())
-                .establishDate(union.getEstablishDate())
                 .headquarterCity(union.getHeadquarterCity())
-                .phone(union.getPhone() != null
-                        ? PhoneResponse.builder()
-                        .countryCode(union.getPhone().getCountryCode())
-                        .phoneNumber(union.getPhone().getPhoneNumber())
-                        .build()
-                        : null)
-
-                .address(union.getAddress() != null
-                        ? AddressResponse.builder()
-                        .addressLine1(union.getAddress().getAddressLine1())
-                        .addressLine2(union.getAddress().getAddressLine2())
-                        .countryIso(union.getAddress().getCountryIso())
-                        .stateIso(union.getAddress().getStateIso())
-                        .city(union.getAddress().getCity())
-                        .zipCode(union.getAddress().getZipCode())
-                        .build()
-                        : null)
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
                 .build();
     }
 }
