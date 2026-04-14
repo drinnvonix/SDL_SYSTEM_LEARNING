@@ -5,6 +5,7 @@ import com.example.sdl_system_learning.common.ResponseUtil;
 import com.example.sdl_system_learning.dto.UnionRequest;
 import com.example.sdl_system_learning.dto.UnionResponse;
 import com.example.sdl_system_learning.service.UnionService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,13 +30,10 @@ public class UnionController {
 
     @PostMapping(value = "/union", consumes = "multipart/form-data")
     public ApiResponse<UnionResponse> createUnion(
-            @RequestPart("data") String data,
+            @Valid @RequestPart("data") UnionRequest request,
             @RequestPart(value = "logo", required = false) MultipartFile file
-    ) throws Exception {
-
-        ObjectMapper mapper = new ObjectMapper();
-        UnionRequest request = mapper.readValue(data, UnionRequest.class);
-
+    ) throws IOException
+    {
         UnionResponse response = unionService.createUnion(request, file);
         return ResponseUtil.success("Union created successfully", response);
     }
