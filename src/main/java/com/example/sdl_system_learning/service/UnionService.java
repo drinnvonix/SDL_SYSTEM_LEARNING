@@ -1,8 +1,6 @@
 package com.example.sdl_system_learning.service;
 
-import com.example.sdl_system_learning.dto.AddressRequest;
-import com.example.sdl_system_learning.dto.PhoneRequest;
-import com.example.sdl_system_learning.dto.UnionRequest;
+import com.example.sdl_system_learning.dto.*;
 import com.example.sdl_system_learning.entity.Location.Address;
 import com.example.sdl_system_learning.entity.Location.CountryLocation;
 import com.example.sdl_system_learning.entity.Phone.Phone;
@@ -64,8 +62,30 @@ public class UnionService {
         return address;
     }
 
+    private PhoneResponse mapToPhoneResponse(Phone phone) {
+        if (phone == null) return null;
 
-    public void createUnion(UnionRequest request, MultipartFile file) throws IOException {
+        return PhoneResponse.builder()
+                .countryCode(phone.getCountryCode())
+                .phoneNumber(phone.getPhoneNumber())
+                .build();
+    }
+
+    private AddressResponse mapToAddressResponse(Address address) {
+        if (address == null) return null;
+
+        return AddressResponse.builder()
+                .addressLine1(address.getAddressLine1())
+                .addressLine2(address.getAddressLine2())
+                .countryIso(address.getCountryIso())
+                .stateIso(address.getStateIso())
+                .city(address.getCity())
+                .zipCode(address.getZipCode())
+                .build();
+    }
+
+
+    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException {
 
         if (request.getPhone() != null) {
             phoneValidationService.validatePhone(request.getPhone());
@@ -136,7 +156,18 @@ public class UnionService {
         System.out.println("FILE: " + file);
 
         union.setLogo(logoPath);
-
         unionRepository.save(union);
+
+        return UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
+                .build();
     }
 }

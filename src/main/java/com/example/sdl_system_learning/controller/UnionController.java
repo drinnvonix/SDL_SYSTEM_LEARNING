@@ -3,6 +3,7 @@ package com.example.sdl_system_learning.controller;
 import com.example.sdl_system_learning.common.ApiResponse;
 import com.example.sdl_system_learning.common.ResponseUtil;
 import com.example.sdl_system_learning.dto.UnionRequest;
+import com.example.sdl_system_learning.dto.UnionResponse;
 import com.example.sdl_system_learning.service.UnionService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UnionController {
     }
 
     @PostMapping(value = "/union", consumes = "multipart/form-data")
-    public ApiResponse<?> createUnion(
+    public ApiResponse<UnionResponse> createUnion(
             @RequestPart("data") String data,
             @RequestPart(value = "logo", required = false) MultipartFile file
     ) throws Exception {
@@ -29,8 +30,7 @@ public class UnionController {
         ObjectMapper mapper = new ObjectMapper();
         UnionRequest request = mapper.readValue(data, UnionRequest.class);
 
-        unionService.createUnion(request, file);
-
-        return ResponseUtil.success("Union created successfully");
+        UnionResponse response = unionService.createUnion(request, file);
+        return ResponseUtil.success("Union created successfully", response);
     }
 }
