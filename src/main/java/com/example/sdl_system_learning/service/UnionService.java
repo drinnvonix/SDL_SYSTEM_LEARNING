@@ -7,6 +7,8 @@ import com.example.sdl_system_learning.entity.Phone.Phone;
 import com.example.sdl_system_learning.entity.Union;
 import com.example.sdl_system_learning.repository.CountryLocationRepository;
 import com.example.sdl_system_learning.repository.UnionRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -170,5 +172,40 @@ public class UnionService {
                 .phone(mapToPhoneResponse(union.getPhone()))
                 .address(mapToAddressResponse(union.getAddress()))
                 .build();
+    }
+
+    public Page<UnionResponse> getAllUnions(Pageable pageable) {
+
+        Page<Union> unionPage = unionRepository.findAll(pageable);
+
+        return unionPage.map(union -> UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .websiteUrl(union.getWebsiteUrl())
+                .logo(union.getLogo())
+                .establishDate(union.getEstablishDate())
+
+                .phone(union.getPhone() != null
+                        ? PhoneResponse.builder()
+                        .countryCode(union.getPhone().getCountryCode())
+                        .phoneNumber(union.getPhone().getPhoneNumber())
+                        .build()
+                        : null)
+
+                .address(union.getAddress() != null
+                        ? AddressResponse.builder()
+                        .addressLine1(union.getAddress().getAddressLine1())
+                        .addressLine2(union.getAddress().getAddressLine2())
+                        .countryIso(union.getAddress().getCountryIso())
+                        .stateIso(union.getAddress().getStateIso())
+                        .city(union.getAddress().getCity())
+                        .zipCode(union.getAddress().getZipCode())
+                        .build()
+                        : null)
+
+                .build()
+        );
     }
 }
