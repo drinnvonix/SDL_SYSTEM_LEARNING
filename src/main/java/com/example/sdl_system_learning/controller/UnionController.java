@@ -2,11 +2,9 @@ package com.example.sdl_system_learning.controller;
 
 import com.example.sdl_system_learning.common.ApiResponse;
 import com.example.sdl_system_learning.common.ResponseUtil;
-import com.example.sdl_system_learning.common.UnionResponse;
 import com.example.sdl_system_learning.dto.UnionRequest;
 import com.example.sdl_system_learning.dto.UnionResponse;
 import com.example.sdl_system_learning.service.UnionService;
-import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
