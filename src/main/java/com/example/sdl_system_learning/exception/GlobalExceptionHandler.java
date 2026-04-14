@@ -2,8 +2,6 @@ package com.example.sdl_system_learning.exception;
 
 import com.example.sdl_system_learning.common.ApiResponse;
 import com.example.sdl_system_learning.common.ResponseUtil;
-import com.example.sdl_system_learning.service.PhoneService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -17,7 +15,7 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidPhoneException.class)
-    public ApiResponse<?> handlePhone(InvalidPhoneException ex) {
+    public ApiResponse<?> handlePhone(InvalidPhoneException ex){
 
         return ResponseUtil.error(
                 400,
@@ -27,7 +25,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(InvalidLocationException.class)
-    public ApiResponse<?> handleLocation(InvalidLocationException ex) {
+    public ApiResponse<?> handleLocation(InvalidLocationException ex){
 
         return ResponseUtil.error(
                 400,
@@ -37,7 +35,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ApiResponse<?> handleValidation(MethodArgumentNotValidException ex) {
+    public ApiResponse<?> handleValidation(MethodArgumentNotValidException ex){
 
         Map<String, String> errors = new HashMap<>();
 
@@ -50,7 +48,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ResponseEntity<ApiResponse<?>> handleFileSizeException(
-            MaxUploadSizeExceededException ex) {
+            MaxUploadSizeExceededException ex){
 
         return new ResponseEntity<>(
                 ResponseUtil.error(
@@ -63,7 +61,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ApiResponse<?> handleGeneric(Exception ex) {
+    public ApiResponse<?> handleGeneric(Exception ex){
 
         return ResponseUtil.error(
                 500,

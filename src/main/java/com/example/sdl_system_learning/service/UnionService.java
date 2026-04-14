@@ -15,27 +15,25 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.Collections;
-import java.util.Optional;
 
 @Service
 public class UnionService {
 
     private final PhoneValidationService phoneValidationService;
-    private final UnionRepository unionRepository;
+    private final UnionRepository  unionRepository;
     private final CountryLocationRepository countryRepository;
 
 
     public UnionService(UnionRepository unionRepository,
                         PhoneValidationService phoneValidationService,
-                        CountryLocationRepository countryRepository) {
+                        CountryLocationRepository countryRepository){
 
         this.unionRepository = unionRepository;
         this.phoneValidationService = phoneValidationService;
         this.countryRepository = countryRepository;
     }
 
-    private Phone mapToPhone(PhoneRequest request) {
+    private Phone mapToPhone(PhoneRequest request){
 
         if (request == null) return null;
 
@@ -45,7 +43,7 @@ public class UnionService {
                 .build();
     }
 
-    private Address mapToAddress(AddressRequest request) {
+    private Address mapToAddress(AddressRequest request){
 
         if (request == null) return null;
 
@@ -66,7 +64,8 @@ public class UnionService {
         return address;
     }
 
-    private PhoneResponse mapToPhoneResponse(Phone phone) {
+    private PhoneResponse mapToPhoneResponse(Phone phone){
+
         if (phone == null) return null;
 
         return PhoneResponse.builder()
@@ -75,7 +74,8 @@ public class UnionService {
                 .build();
     }
 
-    private AddressResponse mapToAddressResponse(Address address) {
+    private AddressResponse mapToAddressResponse(Address address){
+
         if (address == null) return null;
 
         return AddressResponse.builder()
@@ -89,7 +89,7 @@ public class UnionService {
     }
 
 
-    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException {
+    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException{
 
         if (request.getPhone() != null) {
             phoneValidationService.validatePhone(request.getPhone());
@@ -176,44 +176,7 @@ public class UnionService {
                 .build();
     }
 
-    public void updateUnion(String id, UnionRequest request, MultipartFile file) {
-
-        Union union = unionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("UNION_NOT_FOUND"));
-
-        // Email uniqueness
-        if (request.getEmail() != null &&
-                !request.getEmail().equals(union.getEmail()) &&
-                unionRepository.existsByEmail(request.getEmail())) {
-            throw new RuntimeException("EMAIL_ALREADY_EXISTS");
-        }
-
-        // Phone validation
-        if (request.getPhone() != null) {
-            phoneValidationService.validatePhone(request.getPhone());
-        }
-
-        // Date validation
-        LocalDate date = LocalDate.parse(request.getEstablishDate());
-        if (date.isAfter(LocalDate.now())) {
-            throw new RuntimeException("INVALID_ESTABLISH_DATE");
-        }
-
-        // Update fields
-        union.setUnionName(request.getUnionName());
-        union.setShortName(request.getShortName());
-        union.setHeadquarterCity(request.getHeadquarterCity());
-        union.setEmail(request.getEmail());
-        union.setWebsiteUrl(request.getWebsiteUrl());
-        union.setEstablishDate(request.getEstablishDate());
-        union.setPhone(mapToPhone(request.getPhone()));
-        union.setAddress(mapToAddress(request.getAddress()));
-
-        unionRepository.save(union);
-    }
-
-
-    public Page<UnionResponse> getAllUnions(Pageable pageable) {
+    public Page<UnionResponse> getAllUnions(Pageable pageable){
 
         Page<Union> unionPage = unionRepository.findAll(pageable);
 
@@ -225,6 +188,7 @@ public class UnionService {
                 .websiteUrl(union.getWebsiteUrl())
                 .logo(union.getLogo())
                 .establishDate(union.getEstablishDate())
+                .headquarterCity(union.getHeadquarterCity())
 
                 .phone(union.getPhone() != null
                         ? PhoneResponse.builder()
@@ -246,5 +210,40 @@ public class UnionService {
 
                 .build()
         );
+    }
+
+
+    public UnionResponse getUnionById(String id) {
+
+        Union union = unionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Union not found"));
+
+        return UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .websiteUrl(union.getWebsiteUrl())
+                .logo(union.getLogo())
+                .establishDate(union.getEstablishDate())
+                .headquarterCity(union.getHeadquarterCity())
+                .phone(union.getPhone() != null
+                        ? PhoneResponse.builder()
+                        .countryCode(union.getPhone().getCountryCode())
+                        .phoneNumber(union.getPhone().getPhoneNumber())
+                        .build()
+                        : null)
+
+                .address(union.getAddress() != null
+                        ? AddressResponse.builder()
+                        .addressLine1(union.getAddress().getAddressLine1())
+                        .addressLine2(union.getAddress().getAddressLine2())
+                        .countryIso(union.getAddress().getCountryIso())
+                        .stateIso(union.getAddress().getStateIso())
+                        .city(union.getAddress().getCity())
+                        .zipCode(union.getAddress().getZipCode())
+                        .build()
+                        : null)
+                .build();
     }
 }

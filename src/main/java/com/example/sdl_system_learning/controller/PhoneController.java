@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-public class PhoneController {
+public class PhoneController{
 
     private final PhoneService phoneService;
 
-    public PhoneController(PhoneService phoneService) {
+    public PhoneController(PhoneService phoneService){
+
         this.phoneService = phoneService;
     }
 
     @PostMapping("/validate-phone")
-    public ApiResponse<?> validate(@RequestBody PhoneRequest request) {
+    public ApiResponse<?> validate(@RequestBody PhoneRequest request){
 
         phoneService.validatePhone(request);
 

@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 
 public interface CountryLocationRepository
-        extends MongoRepository<CountryLocation, String> {
+        extends MongoRepository<CountryLocation, String>{
 
     Optional<CountryLocation> findByIso2(String iso2);
 }

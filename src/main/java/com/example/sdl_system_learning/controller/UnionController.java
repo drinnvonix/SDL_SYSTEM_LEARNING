@@ -8,10 +8,9 @@ import com.example.sdl_system_learning.service.UnionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import tools.jackson.core.JacksonException;
 import tools.jackson.databind.ObjectMapper;
 
 
@@ -38,38 +37,35 @@ public class UnionController {
         return ResponseUtil.success("Union created successfully", response);
     }
 
-
-    @PutMapping(value = "/union/{id}", consumes = "multipart/form-data" )
-    public ApiResponse<?> updateUnion(
-            @PathVariable String id,
-            @RequestPart("data") String data,
-            @RequestPart(value = "file", required = false) MultipartFile file
-    ){
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            UnionRequest request = mapper.readValue(data, UnionRequest.class);
-
-            unionService.updateUnion(id,request, file);
-            return ResponseUtil.success("Union Updated successfully", HttpStatus.OK);
-        } catch (JacksonException e) {
-            return ResponseUtil.error(400,"Something went wrong, Please try agian.","error");
-        }
-    }
-
     @GetMapping("/unions")
     public ApiResponse<?> getAllUnions(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir
     ) {
 
-        Pageable pageable = PageRequest.of(page, size);
+        Sort sort = sortDir.equalsIgnoreCase("desc")
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
 
-        Page<UnionResponse> unionPage = unionService.getAllUnions(pageable);
+        Pageable pageable = PageRequest.of(page, size, sort);
 
         return ApiResponse.builder()
                 .statusCode(200)
                 .message("Unions fetched successfully")
-                .data(unionPage)
+                .data(unionService.getAllUnions(pageable))
+                .build();
+    }
+
+
+    @GetMapping("/unions/{id}")
+    public ApiResponse<?> getUnionById(@PathVariable String id) {
+
+        return ApiResponse.builder()
+                .statusCode(200)
+                .message("Union fetched successfully")
+                .data(unionService.getUnionById(id))
                 .build();
     }
 }

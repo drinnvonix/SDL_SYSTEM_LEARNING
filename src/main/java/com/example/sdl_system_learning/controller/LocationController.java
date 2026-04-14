@@ -10,17 +10,23 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class LocationController {
+public class LocationController{
 
-    private CountryLocationRepository countryLocationRepository;
+    private final CountryLocationRepository countryLocationRepository;
+
+    public LocationController(CountryLocationRepository countryLocationRepository){
+
+        this.countryLocationRepository = countryLocationRepository;
+    }
 
     @GetMapping("/countries")
-    public List<CountryLocation> getCountries() {
+    public List<CountryLocation> getCountries(){
+
         return countryLocationRepository.findAll();
     }
 
     @GetMapping("/states/{countryIso}")
-    public List<State> getStates(@PathVariable String countryIso) {
+    public List<State> getStates(@PathVariable String countryIso){
 
         CountryLocation country = countryLocationRepository
                 .findAll()
@@ -34,7 +40,7 @@ public class LocationController {
 
     @GetMapping("/cities")
     public List<City> getCities(@RequestParam String countryIso,
-                                @RequestParam String stateIso) {
+                                @RequestParam String stateIso){
 
         CountryLocation country = countryLocationRepository.findAll()
                 .stream()

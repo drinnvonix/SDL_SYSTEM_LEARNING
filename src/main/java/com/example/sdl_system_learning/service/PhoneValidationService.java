@@ -11,15 +11,17 @@ public class PhoneValidationService {
 
     private final CountryService countryService;
 
-    public PhoneValidationService(CountryService countryService) {
+    public PhoneValidationService(CountryService countryService){
+
         this.countryService = countryService;
     }
 
-    public void validatePhone(PhoneRequest request) {
+    public void validatePhone(PhoneRequest request){
 
         Country country = countryService.getByIso(request.getCountryIso());
 
-        if (country == null) {
+        if (country == null){
+
             throw new RuntimeException("Invalid country ISO");
         }
 
@@ -28,7 +30,8 @@ public class PhoneValidationService {
                 request.getPhoneNumber()
         );
 
-        if (!valid) {
+        if (!valid){
+
             throw new InvalidPhoneException(
                     "Invalid phone number for country: " + country.getCountry()
             );

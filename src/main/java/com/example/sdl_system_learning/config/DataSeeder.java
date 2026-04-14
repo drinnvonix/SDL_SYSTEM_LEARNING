@@ -15,12 +15,12 @@ public class DataSeeder {
 
     private final CountryLocationRepository  countryRepository;
 
-    public DataSeeder(CountryLocationRepository  countryRepository) {
+    public DataSeeder(CountryLocationRepository  countryRepository){
         this.countryRepository = countryRepository;
     }
 
     @PostConstruct
-    public void load() throws Exception {
+    public void load() throws Exception{
 
         ObjectMapper mapper = new ObjectMapper();
 
@@ -32,14 +32,8 @@ public class DataSeeder {
                 new TypeReference<>() {}
         );
 
-        System.out.println("Total countries: " + data.size());
-
-//        data.forEach(c -> c.setId(null));
-
         countryRepository.deleteAll();
 
         countryRepository.saveAll(data);
-
-        System.out.println("Saved: " + data.size());
     }
 }

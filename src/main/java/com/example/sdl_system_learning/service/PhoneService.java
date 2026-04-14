@@ -10,11 +10,12 @@ public class PhoneService {
 
     private final CountryService countryService;
 
-    public PhoneService(CountryService countryService) {
+    public PhoneService(CountryService countryService){
+
         this.countryService = countryService;
     }
 
-    public void validatePhone(PhoneRequest request) {
+    public void validatePhone(PhoneRequest request){
 
         Country country = countryService.getByIso(request.getCountryIso());
 
@@ -23,7 +24,7 @@ public class PhoneService {
                 request.getPhoneNumber()
         );
 
-        if (!valid) {
+        if (!valid){
             throw new RuntimeException("Invalid phone number");
         }
     }
