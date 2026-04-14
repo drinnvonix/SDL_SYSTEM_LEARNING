@@ -20,30 +20,25 @@ import java.time.LocalDate;
 public class UnionService {
 
     private final PhoneValidationService phoneValidationService;
-    private final UnionRepository  unionRepository;
+    private final UnionRepository unionRepository;
     private final CountryLocationRepository countryRepository;
 
 
-    public UnionService(UnionRepository unionRepository,
-                        PhoneValidationService phoneValidationService,
-                        CountryLocationRepository countryRepository){
+    public UnionService(UnionRepository unionRepository, PhoneValidationService phoneValidationService, CountryLocationRepository countryRepository) {
 
         this.unionRepository = unionRepository;
         this.phoneValidationService = phoneValidationService;
         this.countryRepository = countryRepository;
     }
 
-    private Phone mapToPhone(PhoneRequest request){
+    private Phone mapToPhone(PhoneRequest request) {
 
         if (request == null) return null;
 
-        return Phone.builder()
-                .countryCode(request.getCountryIso())
-                .phoneNumber(request.getPhoneNumber())
-                .build();
+        return Phone.builder().countryCode(request.getCountryIso()).phoneNumber(request.getPhoneNumber()).build();
     }
 
-    private Address mapToAddress(AddressRequest request){
+    private Address mapToAddress(AddressRequest request) {
 
         if (request == null) return null;
 
@@ -52,9 +47,7 @@ public class UnionService {
         address.setAddressLine1(request.getAddressLine1());
         address.setAddressLine2(request.getAddressLine2());
 
-        CountryLocation country = countryRepository
-                .findByIso2(request.getCountryIso())
-                .orElseThrow(() -> new RuntimeException("Invalid country"));
+        CountryLocation country = countryRepository.findByIso2(request.getCountryIso()).orElseThrow(() -> new RuntimeException("Invalid country"));
 
         address.setCountryIso(request.getCountryIso());
         address.setStateIso(request.getStateIso());
@@ -64,39 +57,28 @@ public class UnionService {
         return address;
     }
 
-    private PhoneResponse mapToPhoneResponse(Phone phone){
+    private PhoneResponse mapToPhoneResponse(Phone phone) {
 
         if (phone == null) return null;
 
-        return PhoneResponse.builder()
-                .countryCode(phone.getCountryCode())
-                .phoneNumber(phone.getPhoneNumber())
-                .build();
+        return PhoneResponse.builder().countryCode(phone.getCountryCode()).phoneNumber(phone.getPhoneNumber()).build();
     }
 
-    private AddressResponse mapToAddressResponse(Address address){
+    private AddressResponse mapToAddressResponse(Address address) {
 
         if (address == null) return null;
 
-        return AddressResponse.builder()
-                .addressLine1(address.getAddressLine1())
-                .addressLine2(address.getAddressLine2())
-                .countryIso(address.getCountryIso())
-                .stateIso(address.getStateIso())
-                .city(address.getCity())
-                .zipCode(address.getZipCode())
-                .build();
+        return AddressResponse.builder().addressLine1(address.getAddressLine1()).addressLine2(address.getAddressLine2()).countryIso(address.getCountryIso()).stateIso(address.getStateIso()).city(address.getCity()).zipCode(address.getZipCode()).build();
     }
 
 
-    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException{
+    public UnionResponse createUnion(UnionRequest request, MultipartFile file) throws IOException {
 
         if (request.getPhone() != null) {
             phoneValidationService.validatePhone(request.getPhone());
         }
 
-        if (request.getEmail() != null &&
-                unionRepository.existsByEmail(request.getEmail())) {
+        if (request.getEmail() != null && unionRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already exists");
         }
 
@@ -105,16 +87,7 @@ public class UnionService {
             throw new RuntimeException("Established date cannot be in the future.");
         }
 
-        Union union = Union.builder()
-                .unionName(request.getUnionName())
-                .shortName(request.getShortName())
-                .headquarterCity(request.getHeadquarterCity())
-                .email(request.getEmail())
-                .websiteUrl(request.getWebsiteUrl())
-                .establishDate(request.getEstablishDate())
-                .phone(mapToPhone(request.getPhone()))
-                .address(mapToAddress(request.getAddress()))
-                .build();
+        Union union = Union.builder().unionName(request.getUnionName()).shortName(request.getShortName()).headquarterCity(request.getHeadquarterCity()).email(request.getEmail()).websiteUrl(request.getWebsiteUrl()).establishDate(request.getEstablishDate()).phone(mapToPhone(request.getPhone())).address(mapToAddress(request.getAddress())).build();
 
         union = unionRepository.save(union);
 
@@ -124,10 +97,7 @@ public class UnionService {
 
             String originalName = file.getOriginalFilename();
 
-            if (originalName == null ||
-                    !(originalName.endsWith(".jpg") ||
-                            originalName.endsWith(".jpeg") ||
-                            originalName.endsWith(".png"))) {
+            if (originalName == null || !(originalName.endsWith(".jpg") || originalName.endsWith(".jpeg") || originalName.endsWith(".png"))) {
 
                 throw new RuntimeException("Only JPG, JPEG, and PNG formats are allowed.");
             }
@@ -159,18 +129,7 @@ public class UnionService {
 
         unionRepository.save(union);
 
-        return UnionResponse.builder()
-                .id(union.getId())
-                .unionName(union.getUnionName())
-                .shortName(union.getShortName())
-                .email(union.getEmail())
-                .headquarterCity(union.getHeadquarterCity())
-                .websiteUrl(union.getWebsiteUrl())
-                .establishDate(union.getEstablishDate())
-                .logo(union.getLogo())
-                .phone(mapToPhoneResponse(union.getPhone()))
-                .address(mapToAddressResponse(union.getAddress()))
-                .build();
+        return UnionResponse.builder().id(union.getId()).unionName(union.getUnionName()).shortName(union.getShortName()).email(union.getEmail()).headquarterCity(union.getHeadquarterCity()).websiteUrl(union.getWebsiteUrl()).establishDate(union.getEstablishDate()).logo(union.getLogo()).phone(mapToPhoneResponse(union.getPhone())).address(mapToAddressResponse(union.getAddress())).build();
     }
 
     public UnionResponse updateUnion(String id, UnionRequest request, MultipartFile file) throws IOException {
@@ -178,18 +137,15 @@ public class UnionService {
         Union union = unionRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("UNION_NOT_FOUND"));
 
-        // Phone validation
         if (request.getPhone() != null) {
             phoneValidationService.validatePhone(request.getPhone());
         }
 
-        // Date validation
         LocalDate date = LocalDate.parse(request.getEstablishDate());
         if (date.isAfter(LocalDate.now())) {
             throw new RuntimeException("INVALID_ESTABLISH_DATE");
         }
 
-        // Update basic fields
         union.setUnionName(request.getUnionName());
         union.setShortName(request.getShortName());
         union.setHeadquarterCity(request.getHeadquarterCity());
@@ -199,42 +155,53 @@ public class UnionService {
         union.setPhone(mapToPhone(request.getPhone()));
         union.setAddress(mapToAddress(request.getAddress()));
 
-        // 🔥 IMAGE UPLOAD LOGIC (NEW)
+        // ✅ IMAGE UPDATE
         if (file != null && !file.isEmpty()) {
 
+            System.out.println("Uploading file: " + file.getOriginalFilename());
+
             String originalName = file.getOriginalFilename();
+            String lower = originalName.toLowerCase();
 
-            if (originalName == null ||
-                    !(originalName.endsWith(".jpg") ||
-                            originalName.endsWith(".jpeg") ||
-                            originalName.endsWith(".png"))) {
-
-                throw new RuntimeException("Only JPG, JPEG, and PNG formats are allowed.");
+            // ✅ Validate extension
+            if (!(lower.endsWith(".jpg") || lower.endsWith(".jpeg") || lower.endsWith(".png"))) {
+                throw new RuntimeException("Only JPG, JPEG, PNG allowed");
             }
 
+            // ✅ Validate size (25MB)
             long maxSize = 25 * 1024 * 1024;
             if (file.getSize() > maxSize) {
-                throw new RuntimeException("Image must be less than 25 MB.");
+                throw new RuntimeException("File must be < 25MB");
             }
 
             String extension = originalName.substring(originalName.lastIndexOf("."));
-            String fileName = "UnionLogo_" + union.getId() + extension;
 
-            String uploadDir = System.getProperty("user.dir") + "/uploads/";
+            // ✅ UNIQUE filename (prevents cache issue)
+            String fileName = "UnionLogo_" + union.getId() + "_" + System.currentTimeMillis() + extension;
+
+            // ✅ Upload directory
+            String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";
             File dir = new File(uploadDir);
-            if (!dir.exists()) dir.mkdirs();
 
-            File dest = new File(uploadDir + fileName);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
+            // ✅ Save new file
+            File dest = new File(dir, fileName);
             file.transferTo(dest);
 
-            // Optional: delete old image
+            System.out.println("Saved at: " + dest.getAbsolutePath());
+
+            // ✅ Delete old file
             if (union.getLogo() != null) {
-                File oldFile = new File(uploadDir + union.getLogo());
+                File oldFile = new File(uploadDir + File.separator + union.getLogo());
                 if (oldFile.exists()) {
                     oldFile.delete();
                 }
             }
 
+            // ✅ Set new logo
             union.setLogo(fileName);
         }
 
@@ -253,42 +220,19 @@ public class UnionService {
                 .address(mapToAddressResponse(union.getAddress()))
                 .build();
     }
-    public Page<UnionResponse> getAllUnions(Pageable pageable){
+
+    public Page<UnionResponse> getAllUnions(Pageable pageable) {
 
         Page<Union> unionPage = unionRepository.findAll(pageable);
 
-        return unionPage.map(union -> UnionResponse.builder()
-                .id(union.getId())
-                .unionName(union.getUnionName())
-                .shortName(union.getShortName())
-                .email(union.getEmail())
-                .headquarterCity(union.getHeadquarterCity())
-                .websiteUrl(union.getWebsiteUrl())
-                .establishDate(union.getEstablishDate())
-                .logo(union.getLogo())
-                .phone(mapToPhoneResponse(union.getPhone()))
-                .address(mapToAddressResponse(union.getAddress()))
-                .build()
-        );
+        return unionPage.map(union -> UnionResponse.builder().id(union.getId()).unionName(union.getUnionName()).shortName(union.getShortName()).email(union.getEmail()).headquarterCity(union.getHeadquarterCity()).websiteUrl(union.getWebsiteUrl()).establishDate(union.getEstablishDate()).logo(union.getLogo()).phone(mapToPhoneResponse(union.getPhone())).address(mapToAddressResponse(union.getAddress())).build());
     }
 
 
     public UnionResponse getUnionById(String id) {
 
-        Union union = unionRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Union not found"));
+        Union union = unionRepository.findById(id).orElseThrow(() -> new RuntimeException("Union not found"));
 
-        return UnionResponse.builder()
-                .id(union.getId())
-                .unionName(union.getUnionName())
-                .shortName(union.getShortName())
-                .email(union.getEmail())
-                .headquarterCity(union.getHeadquarterCity())
-                .websiteUrl(union.getWebsiteUrl())
-                .establishDate(union.getEstablishDate())
-                .logo(union.getLogo())
-                .phone(mapToPhoneResponse(union.getPhone()))
-                .address(mapToAddressResponse(union.getAddress()))
-                .build();
+        return UnionResponse.builder().id(union.getId()).unionName(union.getUnionName()).shortName(union.getShortName()).email(union.getEmail()).headquarterCity(union.getHeadquarterCity()).websiteUrl(union.getWebsiteUrl()).establishDate(union.getEstablishDate()).logo(union.getLogo()).phone(mapToPhoneResponse(union.getPhone())).address(mapToAddressResponse(union.getAddress())).build();
     }
 }

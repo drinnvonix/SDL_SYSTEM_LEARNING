@@ -44,7 +44,7 @@ public class UnionController {
     public ApiResponse<UnionResponse> updateUnion(
             @PathVariable String id,
             @RequestPart("data") String data,
-            @RequestPart(value = "file", required = false) MultipartFile file
+            @RequestPart(value = "logo", required = false) MultipartFile file
     ) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         UnionRequest request = mapper.readValue(data, UnionRequest.class);
