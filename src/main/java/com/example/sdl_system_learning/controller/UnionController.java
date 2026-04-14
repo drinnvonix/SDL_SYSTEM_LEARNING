@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import tools.jackson.databind.ObjectMapper;
@@ -35,6 +36,24 @@ public class UnionController {
 
         UnionResponse response = unionService.createUnion(request, file);
         return ResponseUtil.success("Union created successfully", response);
+    }
+
+    @PutMapping(value = "/union/{id}", consumes = "multipart/form-data" )
+    public ApiResponse<?> updateUnion(
+            @PathVariable String id,
+            @RequestPart("data") String data,
+            @RequestPart(value = "file", required = false) MultipartFile file
+    ){
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            UnionRequest request = mapper.readValue(data, UnionRequest.class);
+
+            unionService.updateUnion(id,request, file);
+            return ResponseUtil.success("Union Updated successfully", HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseUtil.error(400,"Something went wrong, Please try agian.","error");
+        }
     }
 
     @GetMapping("/unions")

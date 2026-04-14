@@ -176,6 +176,35 @@ public class UnionService {
                 .build();
     }
 
+    public void updateUnion(String id, UnionRequest request, MultipartFile file) {
+
+        Union union = unionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("UNION_NOT_FOUND"));
+
+
+        // Phone validation
+        if (request.getPhone() != null) {
+            phoneValidationService.validatePhone(request.getPhone());
+        }
+
+        // Date validation
+        LocalDate date = LocalDate.parse(request.getEstablishDate());
+        if (date.isAfter(LocalDate.now())) {
+            throw new RuntimeException("INVALID_ESTABLISH_DATE");
+        }
+
+        // Update fields
+        union.setUnionName(request.getUnionName());
+        union.setShortName(request.getShortName());
+        union.setHeadquarterCity(request.getHeadquarterCity());
+        union.setEmail(request.getEmail());
+        union.setWebsiteUrl(request.getWebsiteUrl());
+        union.setEstablishDate(request.getEstablishDate());
+        union.setPhone(mapToPhone(request.getPhone()));
+        union.setAddress(mapToAddress(request.getAddress()));
+
+        unionRepository.save(union);
+    }
     public Page<UnionResponse> getAllUnions(Pageable pageable){
 
         Page<Union> unionPage = unionRepository.findAll(pageable);
