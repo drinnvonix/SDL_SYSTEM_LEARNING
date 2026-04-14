@@ -155,7 +155,6 @@ public class UnionService {
         union.setPhone(mapToPhone(request.getPhone()));
         union.setAddress(mapToAddress(request.getAddress()));
 
-        // ✅ IMAGE UPDATE
         if (file != null && !file.isEmpty()) {
 
             System.out.println("Uploading file: " + file.getOriginalFilename());
@@ -163,12 +162,10 @@ public class UnionService {
             String originalName = file.getOriginalFilename();
             String lower = originalName.toLowerCase();
 
-            // ✅ Validate extension
             if (!(lower.endsWith(".jpg") || lower.endsWith(".jpeg") || lower.endsWith(".png"))) {
                 throw new RuntimeException("Only JPG, JPEG, PNG allowed");
             }
 
-            // ✅ Validate size (25MB)
             long maxSize = 25 * 1024 * 1024;
             if (file.getSize() > maxSize) {
                 throw new RuntimeException("File must be < 25MB");
@@ -176,10 +173,8 @@ public class UnionService {
 
             String extension = originalName.substring(originalName.lastIndexOf("."));
 
-            // ✅ UNIQUE filename (prevents cache issue)
             String fileName = "UnionLogo_" + union.getId() + "_" + System.currentTimeMillis() + extension;
 
-            // ✅ Upload directory
             String uploadDir = System.getProperty("user.dir") + File.separator + "uploads";
             File dir = new File(uploadDir);
 
@@ -187,13 +182,11 @@ public class UnionService {
                 dir.mkdirs();
             }
 
-            // ✅ Save new file
             File dest = new File(dir, fileName);
             file.transferTo(dest);
 
             System.out.println("Saved at: " + dest.getAbsolutePath());
 
-            // ✅ Delete old file
             if (union.getLogo() != null) {
                 File oldFile = new File(uploadDir + File.separator + union.getLogo());
                 if (oldFile.exists()) {
@@ -201,7 +194,7 @@ public class UnionService {
                 }
             }
 
-            // ✅ Set new logo
+
             union.setLogo(fileName);
         }
 
@@ -221,18 +214,42 @@ public class UnionService {
                 .build();
     }
 
-    public Page<UnionResponse> getAllUnions(Pageable pageable) {
+    public Page<UnionResponse> getAllUnions(Pageable pageable){
 
         Page<Union> unionPage = unionRepository.findAll(pageable);
 
-        return unionPage.map(union -> UnionResponse.builder().id(union.getId()).unionName(union.getUnionName()).shortName(union.getShortName()).email(union.getEmail()).headquarterCity(union.getHeadquarterCity()).websiteUrl(union.getWebsiteUrl()).establishDate(union.getEstablishDate()).logo(union.getLogo()).phone(mapToPhoneResponse(union.getPhone())).address(mapToAddressResponse(union.getAddress())).build());
+        return unionPage.map(union -> UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .headquarterCity(union.getHeadquarterCity())
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
+                .build()
+        );
     }
 
 
     public UnionResponse getUnionById(String id) {
 
-        Union union = unionRepository.findById(id).orElseThrow(() -> new RuntimeException("Union not found"));
+        Union union = unionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Union not found"));
 
-        return UnionResponse.builder().id(union.getId()).unionName(union.getUnionName()).shortName(union.getShortName()).email(union.getEmail()).headquarterCity(union.getHeadquarterCity()).websiteUrl(union.getWebsiteUrl()).establishDate(union.getEstablishDate()).logo(union.getLogo()).phone(mapToPhoneResponse(union.getPhone())).address(mapToAddressResponse(union.getAddress())).build();
+        return UnionResponse.builder()
+                .id(union.getId())
+                .unionName(union.getUnionName())
+                .shortName(union.getShortName())
+                .email(union.getEmail())
+                .headquarterCity(union.getHeadquarterCity())
+                .websiteUrl(union.getWebsiteUrl())
+                .establishDate(union.getEstablishDate())
+                .logo(union.getLogo())
+                .phone(mapToPhoneResponse(union.getPhone()))
+                .address(mapToAddressResponse(union.getAddress()))
+                .build();
     }
 }
