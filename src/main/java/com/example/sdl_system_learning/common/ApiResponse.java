@@ -21,5 +21,7 @@ public class ApiResponse<T> {
 
     private T data;
 
-    private Map<String, String> errors;
+//    private Map<String, String> errors;
+
+    private Object errors;
 }

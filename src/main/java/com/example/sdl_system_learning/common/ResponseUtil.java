@@ -44,4 +44,13 @@ public class ResponseUtil {
                 .errors(errors)
                 .build();
     }
+
+    public static <T> ApiResponse<T> error(int statusCode, String message, Object errors) {
+        return ApiResponse.<T>builder()
+                .statusCode(statusCode)
+                .message(message)
+                .errors(errors)
+                .data(null)
+                .build();
+    }
 }
